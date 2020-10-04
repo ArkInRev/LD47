@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public TMP_Text SOCarriedText;
     public TMP_Text SOTotalText;
     public TMP_Text ShopSOTotalText;
+    public TMP_Text UIHealthText;
 
     public CanvasGroup InGameUI;
     public CanvasGroup ShopUI;
@@ -46,7 +47,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.onSOTotalChange += OnSOTotalChange;
         GameManager.Instance.onShopEnable += OnShopEnable;
         GameManager.Instance.onGameStart += OnGameStart;
- //       GameManager.Instance.onNextLevel += OnNextLevel;
+       GameManager.Instance.onPlayerHealthChange += OnPlayerHealthChange;
     }
 
     // Update is called once per frame
@@ -65,6 +66,12 @@ public class UIManager : MonoBehaviour
     {
         SOTotalText.text = GameManager.Instance.totalSO.ToString();
         ShopSOTotalText.text = GameManager.Instance.totalSO.ToString();
+    }
+
+    private void OnPlayerHealthChange()
+    {
+        UIHealthText.text = Mathf.Ceil(GameManager.Instance.playerC.health).ToString();
+
     }
 
     private void OnShopEnable()

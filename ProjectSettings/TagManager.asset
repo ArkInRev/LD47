@@ -6,6 +6,8 @@ TagManager:
   tags:
   - MapGOTagger
   - PlayerRespawn
+  - PlayerProjectile
+  - EnemyProjectile
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - 
   - 
   - Ghosts
-  - 
+  - AreaDamager
   - 
   - 
   - 

@@ -40,20 +40,15 @@ public class SoulUrnController : MonoBehaviour
             //The player has entered triger
             if (playerHasExitedStart && pc.soCarried>0)
             {   // player has entered the urn trigger after leaving the start area, and is carrying a soul orb
-                exitTheLevel = true;
-                GameManager.Instance.totalSO += pc.soCarried;
-                pc.soCarried = 0;
-                GameManager.Instance.SOChange();
-                GameManager.Instance.SOTotalChange();
-                GameManager.Instance.ResetPlayer();
-                GameManager.Instance.EnableShop();
-                Debug.Log("Trying to turn in orbs and get to shop");
+                ExitToTheShop();
 
             } else // player has not exited or does not have any orbs
             {
                 // start a countdown timer
                 timeInTrigger = 0f;
                 //if the timer expires, do the level exit
+                //ExitToTheShop();
+
             }
         }
     }
@@ -70,8 +65,8 @@ public class SoulUrnController : MonoBehaviour
             }
             if (timeInTrigger >= secondsToExit)
             {
-                exitTheLevel = true;
-                Debug.Log("exit the level is now set to true.");
+                ExitToTheShop();
+                //Debug.Log("exit the level is now set to true.");
             }
         }
     }
@@ -86,6 +81,16 @@ public class SoulUrnController : MonoBehaviour
         }
     }
 
+    private void ExitToTheShop()
+    {
+        GameManager.Instance.totalSO += pc.soCarried;
+        pc.soCarried = 0;
+        GameManager.Instance.SOChange();
+        GameManager.Instance.SOTotalChange();
+        GameManager.Instance.ResetPlayer();
+        GameManager.Instance.EnableShop();
+        //Debug.Log("Trying to turn in orbs and get to shop");
+    }
 
 
 

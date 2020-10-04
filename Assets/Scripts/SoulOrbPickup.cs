@@ -15,11 +15,13 @@ public class SoulOrbPickup : MonoBehaviour, IInteractable
     public GameObject spawnParentGO;
     GameObject goInstantiated;
 
+    public int orbValue = 1;
+
     public void Interact()
     {
         //throw new System.NotImplementedException();
 
-        pc.PickupSO();
+        pc.PickupSO(orbValue);
         Instantiate(pickupEffect, transform.position, Quaternion.identity);
         Destroy(initialParent.gameObject);
 

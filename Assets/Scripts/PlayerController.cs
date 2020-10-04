@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamageable
 {
 
     private GameManager gm;
 
     public int soCarried = 0;
     public float maxHealth = 100f;
+    [SerializeField]
     public float health { get; set; }
 
 
@@ -26,6 +27,7 @@ public class PlayerController : MonoBehaviour
         //maxHealth = gm.GetPlayerHealth();
         //health = gm.GetPlayerHealth();
         //ResetSOCarried();
+        gm.PlayerHealthChange();
     }
 
     // Update is called once per frame
@@ -38,15 +40,31 @@ public class PlayerController : MonoBehaviour
     {
         if (damageTaken > 0) health = Mathf.Clamp(health - damageTaken, 0, maxHealth);
         if (health <= 0) Kill();
-        //gm.PlayerHealthChange(); //game manager fires off event that player was damaged to listeners
+        gm.PlayerHealthChange(); //game manager fires off event that player was damaged to listeners
+        Debug.Log("Player health : " + health.ToString());
+    }
+
+    public void Heal(float damageHealed)
+    {
+        if (damageHealed > 0) health = Mathf.Clamp(health + damageHealed, 0, maxHealth);
+        gm.PlayerHealthChange();
     }
 
     public void Kill()
     {
 
-        Debug.Log("The Player Was Killed, Not implemented");
+        Debug.Log("The Player Was Killed");
+
         //ResetSOCarried();
         //gm.PlayerKilled();
+
+        GameManager.Instance.totalSO += (int)Mathf.Floor(soCarried/2);
+        soCarried = 0;
+        GameManager.Instance.SOChange();
+        GameManager.Instance.SOTotalChange();
+        GameManager.Instance.ResetPlayer();
+        GameManager.Instance.EnableShop();
+
     }
 
     public void ResetSOCarried()
@@ -64,12 +82,12 @@ public class PlayerController : MonoBehaviour
         // reset health. 
         // 
         health = maxHealth;
-        //gm.PlayerHealthChange(); //game manager fires off event that player was damaged to listeners
+        gm.PlayerHealthChange(); //game manager fires off event that player was damaged to listeners
     }
 
-    public void PickupSO()
+    public void PickupSO(int soValue)
     {
-        soCarried += 1;
+        soCarried += soValue;
         gm.SOChange(); // game manager notifies that a soul orb has been collected. 
     }
 
@@ -87,4 +105,6 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.Instance.onResetPlayer -= onResetPlayer;
     }
+
+
 }

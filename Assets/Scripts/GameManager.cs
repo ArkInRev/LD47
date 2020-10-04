@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
 
     public List<GameObject> randomEnemies;
 
+    [SerializeField]
+    private float _playerDamage = 10f;
+    private float _enemyDamage = 10f;
+
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -48,6 +52,20 @@ public class GameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public float GetPlayerDamage()
+    {
+        // implement player damage lookup
+
+        return _playerDamage;
+    }
+
+    public float GetEnemyDamage()
+    {
+        // implement player damage lookup
+
+        return _enemyDamage;
     }
 
     void DestroyAllInstantiatedEntities(GameObject parent)
@@ -182,4 +200,14 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public event Action onPlayerHealthChange;
+    public void PlayerHealthChange()
+    {
+        if (onPlayerHealthChange != null)
+        {
+            onPlayerHealthChange();
+            // Debug.Log("onResetPlayer sent from GM");
+        }
+
+    }
 }

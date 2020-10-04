@@ -9,15 +9,21 @@ public class UpgradeButton : MonoBehaviour
    // public ShopItem thisUpgrade;
     public int upgradeItemInt;
 
+    //private TextMeshPro _textMeshPro;
+
     public TMP_Text upgradeCost;
     public TMP_Text upgradeName;
-    public Button thisButton;
+    public Button thisButton; 
     private bool canPurchase = false;
-
+    private bool wasPurchased = false;
+    public Color32 availableTextColor;
+    public Color32 purchasedTextColor;
     private PlayerController pc;
-    [SerializeField]
-   // private ShopManager sm;
 
+    private void Awake()
+    {
+       // _textMeshPro = gameObject.GetComponent<TextMeshPro>() ?? gameObject.AddComponent<TextMeshPro>();       
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +32,9 @@ public class UpgradeButton : MonoBehaviour
         upgradeCost.text = GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeCost.ToString();
         GameManager.Instance.onSOTotalChange += OnSOTotalChange;
         GameManager.Instance.onVignettePurchased += OnVignettePurchased;
+        //_textMeshPro.color = availableTextColor;
+//        upgradeName.color = availableTextColor;
+//        upgradeCost.color = availableTextColor;
     }
 
     // Update is called once per frame
@@ -64,6 +73,12 @@ public class UpgradeButton : MonoBehaviour
         if (shopInt == upgradeItemInt)
         {
             thisButton.interactable = false;
+            wasPurchased = true;
+            //_textMeshPro.color = purchasedTextColor;
+                        upgradeName.color = purchasedTextColor;
+                        upgradeCost.color = purchasedTextColor;
+
+
         }
     }
 

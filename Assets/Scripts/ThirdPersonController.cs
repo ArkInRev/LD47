@@ -19,6 +19,13 @@ public class ThirdPersonController : MonoBehaviour
     private float forward;
     private float look;
 
+
+    // shooting
+    public GameObject projectile;
+    public Transform staffTip;
+    private bool tryFire1;
+    public float projectileForce = 20f;
+
     void Awake()
     {
         characterController = GetComponent<CharacterController>();
@@ -31,9 +38,19 @@ public class ThirdPersonController : MonoBehaviour
     }
     void Update()
     {
-        look = (Input.GetAxisRaw("Mouse X") * rotSpeed);
+        look = (Input.GetAxisRaw("Mouse X") * rotSpeed * sensitivity);
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt)) ToggleCursorLock();
+        if (Input.GetKeyDown(KeyCode.LeftShift)) ToggleCursorLock();
+        if (Input.GetKeyDown(KeyCode.Alpha1)) sensitivity = 0.25f;
+        if (Input.GetKeyDown(KeyCode.Alpha2)) sensitivity = 0.5f;
+        if (Input.GetKeyDown(KeyCode.Alpha3)) sensitivity = 1f;
+        if (Input.GetKeyDown(KeyCode.Alpha4)) sensitivity = 2f;
+        if (Input.GetKeyDown(KeyCode.Alpha5)) sensitivity = 4f;
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            tryFire1 = true;
+        }
 
     }
 
@@ -55,7 +72,14 @@ public class ThirdPersonController : MonoBehaviour
             characterController.SimpleMove(moveSpeed * transform.right * Time.fixedDeltaTime * horizontal);
         }
 
-
+        // shooting
+        if (tryFire1)
+        {
+            GameObject bullet = Instantiate(projectile, staffTip.position, staffTip.rotation);
+            Rigidbody bulletRB = bullet.GetComponent<Rigidbody>();
+            bulletRB.AddForce(staffTip.forward * projectileForce, ForceMode.Impulse);
+            tryFire1 = false;
+        }
     }
 
     private void ToggleCursorLock()
