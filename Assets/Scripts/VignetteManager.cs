@@ -6,7 +6,7 @@ using System.Linq;
 public class VignetteManager : MonoBehaviour
 {
     public GameObject[] basicVig; //Common/unpurchased vignettes
-    public GameObject[] purchasedVig; //Purchased Vignettes
+    public List<GameObject> purchasedVig; //Purchased Vignettes
     public Transform[] vignetteLocations; // locations to instantiate the vignettes
     public float[] rotations = { 0.0f, 90f, 180f, 270f }; // rotation of instantiated vignette
 
@@ -21,16 +21,11 @@ public class VignetteManager : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.onGameStart += OnGameStart;
+        GameManager.Instance.onVignettePurchased += OnVignettePurchased;
+        // reset shuffling lists
+        ResetShufflingLists();
 
-        listLocs = new List<Transform>();
-        shufflingLocs = new List<Transform>();
-        shuffledLocs = new List<Transform>();
-
-        for (int i = 0; i < vignetteLocations.Length; i++)
-        {
-            listLocs.Add(vignetteLocations[i]);
-            shufflingLocs.Add(vignetteLocations[i]);
-        }
 
         DestroyAllInstantiatedVignettes(vignetteParent);
         InstantiateVignettes();
@@ -41,6 +36,19 @@ public class VignetteManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void ResetShufflingLists()
+    {
+        listLocs = new List<Transform>();
+        shufflingLocs = new List<Transform>();
+        shuffledLocs = new List<Transform>();
+
+        for (int i = 0; i < vignetteLocations.Length; i++)
+        {
+            listLocs.Add(vignetteLocations[i]);
+            shufflingLocs.Add(vignetteLocations[i]);
+        }
     }
 
     void DestroyAllInstantiatedVignettes(GameObject parent)
@@ -60,9 +68,16 @@ public class VignetteManager : MonoBehaviour
         List<Transform> shuffled = new List<Transform>();
 
 
-        if (purchasedVig.Length > 0)
+        if (purchasedVig.Any())
         {
+            // implement purchases here
+            purchasedVig.ForEach(delegate (GameObject purchase)
+            {
+                Transform thisVignette = randomLocationTransform();
+                goInstantiated = Instantiate(purchase, thisVignette.position, GetSpawnRotation(randomPrefabRotation()));
+                goInstantiated.transform.SetParent(vignetteParent.transform);
 
+            });
         }
 
         while (shufflingLocs.Any())
@@ -111,5 +126,17 @@ public class VignetteManager : MonoBehaviour
 
 
         return rotationQ;
+    }
+
+    public void OnGameStart()
+    {
+        DestroyAllInstantiatedVignettes(vignetteParent);
+        ResetShufflingLists();
+        InstantiateVignettes();
+    }
+
+    public void OnVignettePurchased(GameObject purchased, int shopInt)
+    {
+        purchasedVig.Add(purchased);
     }
 }

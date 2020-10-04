@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 80
   upgradeName: Blazing Skeletons
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  firstUpgrade: {fileID: 3540014677912085447, guid: dff7adbf5fa32374c8abb91cacc752a8, type: 3}
+  secondUpgrade: {fileID: 1995740989579737852, guid: ff9283061f07c4947a3ce56cdaa9990b, type: 3}
+  randomEnemy: {fileID: 955800252452829894, guid: c9f8c8fa159b69d4a9a16adb135b347d, type: 3}
   purchased: 0

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 150
   upgradeName: Ectoplasmic Trails
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  firstUpgrade: {fileID: 196931091780869383, guid: d2d0e1d68d67b82479b005fb48a1a27e, type: 3}
+  secondUpgrade: {fileID: 8853705161644411074, guid: aafd372e18e3748418320e45dc4f8168, type: 3}
+  randomEnemy: {fileID: 3128864172331750999, guid: 46a6c86f5f5addb4d80f59cd602e1a84, type: 3}
   purchased: 0

@@ -25,6 +25,7 @@ public class UpgradeButton : MonoBehaviour
         upgradeName.text = GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeName; 
         upgradeCost.text = GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeCost.ToString();
         GameManager.Instance.onSOTotalChange += OnSOTotalChange;
+        GameManager.Instance.onVignettePurchased += OnVignettePurchased;
     }
 
     // Update is called once per frame
@@ -35,7 +36,7 @@ public class UpgradeButton : MonoBehaviour
 
     public bool CanPurchaseUpgrade()
     {
-        canPurchase = ((GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeCost < GameManager.Instance.totalSO) && (!GameManager.Instance.shopUpgrades[upgradeItemInt].purchased));
+        canPurchase = ((GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeCost <= GameManager.Instance.totalSO) && (!GameManager.Instance.shopUpgrades[upgradeItemInt].purchased));
         
 
         //return ((GameManager.Instance.shopUpgrades[upgradeItemInt].upgradeCost < GameManager.Instance.totalSO)); //&& (!sm.purchasedUpgrades[upgradeItemInt]));
@@ -49,11 +50,24 @@ public class UpgradeButton : MonoBehaviour
         //SOCarriedText.text = GameManager.Instance.playerC.soCarried.ToString();
         if (CanPurchaseUpgrade())
         {
-            thisButton.enabled = canPurchase;
+            thisButton.interactable = true;
+        } else
+        {
+            thisButton.interactable = false;
         }
         
         Debug.Log("onSOTotalChanged in Upgrade Button: " + this.name);
     }
+
+    public void OnVignettePurchased(GameObject purchased, int shopInt)
+    {
+        if (shopInt == upgradeItemInt)
+        {
+            thisButton.interactable = false;
+        }
+    }
+
+
     private void OnDisable()
     {
         GameManager.Instance.onSOTotalChange -= OnSOTotalChange;

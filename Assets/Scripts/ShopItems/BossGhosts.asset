@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BossGhosts
   m_EditorClassIdentifier: 
   upgradeCost: 500
-  upgradeName: Amalgam of Souls
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  upgradeName: Gluttonous Souls
+  firstUpgrade: {fileID: 6094952020626872987, guid: 61d8df71b5377b840a98ca33610b5de1, type: 3}
+  secondUpgrade: {fileID: 439361814667738873, guid: ed76bc92c33a76940b301f67bdb2acfc, type: 3}
+  randomEnemy: {fileID: 3128864172331750999, guid: 46a6c86f5f5addb4d80f59cd602e1a84, type: 3}
   purchased: 0

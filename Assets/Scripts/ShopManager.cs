@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ShopManager : MonoBehaviour
 {
 
-    private bool zombiesPurchased = false;
+ /*   private bool zombiesPurchased = false;
     private bool zombiesUpgraded = false;
     private bool zombieBossSpawner = false;
 
@@ -17,9 +17,9 @@ public class ShopManager : MonoBehaviour
     private bool ghostsPurchased = false;
     private bool ghostsUpgraded = false;
     private bool ghostBossSpawner = false;
-
-    public ShopItem[] shopUpgrades;
-    public bool[] purchasedUpgrades;
+    */
+   // public ShopItem[] shopUpgrades;
+  //  public bool[] purchasedUpgrades;
 
 
 
@@ -28,7 +28,7 @@ public class ShopManager : MonoBehaviour
     {
         for(int i = 0; i < 9; i++)
         {
-            purchasedUpgrades[i] = false;
+        //    purchasedUpgrades[i] = false;
         }
     }
 

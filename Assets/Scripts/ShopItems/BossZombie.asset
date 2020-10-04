@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 100
   upgradeName: Shambling Horror
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  firstUpgrade: {fileID: 8078234592326393550, guid: f895f069d2536d841a66e7155e014302, type: 3}
+  secondUpgrade: {fileID: 2219924432252278025, guid: 69fa6187ce0ef24468c25117145259c0, type: 3}
+  randomEnemy: {fileID: 4270558768584107399, guid: 1f5343e8528fa10498c19acd3f5ccaa5, type: 3}
   purchased: 0

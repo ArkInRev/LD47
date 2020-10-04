@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 240
   upgradeName: Inferno Skeleton
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  firstUpgrade: {fileID: 3356531667343776298, guid: 9e35c0c7fddcbfe4c802f8f97a716e9a, type: 3}
+  secondUpgrade: {fileID: 1294234262673836972, guid: eedc2ff4da835e4498354c031652a4a5, type: 3}
+  randomEnemy: {fileID: 955800252452829894, guid: c9f8c8fa159b69d4a9a16adb135b347d, type: 3}
   purchased: 0

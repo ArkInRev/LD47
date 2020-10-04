@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 1
   upgradeName: Summon Zombies
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
-  purchased: 0
+  firstUpgrade: {fileID: 5870226925522339646, guid: 6e6b93bca62657347b028e0feeee697b, type: 3}
+  secondUpgrade: {fileID: 6078386002627146636, guid: 2c3552f357ed4f348bb0a6a8389fd530, type: 3}
+  randomEnemy: {fileID: 4270558768584107399, guid: 1f5343e8528fa10498c19acd3f5ccaa5, type: 3}
+  purchased: 1

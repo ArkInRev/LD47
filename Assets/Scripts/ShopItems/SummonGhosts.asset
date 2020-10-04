@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 25
   upgradeName: Summon Ghosts
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
+  firstUpgrade: {fileID: 8598756573185278466, guid: 43e52ae7db7833b47a5da4e590295b57, type: 3}
+  secondUpgrade: {fileID: 5651446384663577851, guid: d0883f756e7888b4e933bd816a9a71ed, type: 3}
+  randomEnemy: {fileID: 3128864172331750999, guid: 46a6c86f5f5addb4d80f59cd602e1a84, type: 3}
   purchased: 0

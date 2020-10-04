@@ -9,5 +9,6 @@ public class ShopItem : ScriptableObject
     public string upgradeName;
     public GameObject firstUpgrade;
     public GameObject secondUpgrade;
+    public GameObject randomEnemy;
     public bool purchased;
 }

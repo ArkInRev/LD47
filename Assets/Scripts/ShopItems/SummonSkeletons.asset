@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeCost: 10
   upgradeName: Summon Skeletons
-  firstUpgrade: {fileID: 0}
-  secondUpgrade: {fileID: 0}
-  purchased: 0
+  firstUpgrade: {fileID: 2912959568363382277, guid: 5894e5442f5d48c4085c17a8f654da90, type: 3}
+  secondUpgrade: {fileID: 8486020966339677042, guid: 15d9a8a2213e97d41ad81b1c4d95891f, type: 3}
+  randomEnemy: {fileID: 955800252452829894, guid: c9f8c8fa159b69d4a9a16adb135b347d, type: 3}
+  purchased: 1

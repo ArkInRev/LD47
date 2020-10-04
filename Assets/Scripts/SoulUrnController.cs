@@ -30,11 +30,7 @@ public class SoulUrnController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (exitTheLevel)
-        {
 
-            return;
-        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,7 +41,14 @@ public class SoulUrnController : MonoBehaviour
             if (playerHasExitedStart && pc.soCarried>0)
             {   // player has entered the urn trigger after leaving the start area, and is carrying a soul orb
                 exitTheLevel = true;
-                Debug.Log("exit the level is now set to true.");
+                GameManager.Instance.totalSO += pc.soCarried;
+                pc.soCarried = 0;
+                GameManager.Instance.SOChange();
+                GameManager.Instance.SOTotalChange();
+                GameManager.Instance.ResetPlayer();
+                GameManager.Instance.EnableShop();
+                Debug.Log("Trying to turn in orbs and get to shop");
+
             } else // player has not exited or does not have any orbs
             {
                 // start a countdown timer
