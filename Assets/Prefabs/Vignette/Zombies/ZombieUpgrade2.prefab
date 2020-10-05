@@ -11,6 +11,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieUpgrade2
       objectReference: {fileID: 0}
+    - target: {fileID: 2980703155873684769, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090662021916533563, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3090662021916533563, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_BaseOffset
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5086437157796305915, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5546190701794364303, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5718889187936708745, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8602510911165829301, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 8875159949661687292, guid: 7bb08476f21e41a4d94ded2242a42a4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

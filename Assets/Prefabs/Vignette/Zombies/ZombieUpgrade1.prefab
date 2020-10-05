@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 476386774114258734, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 617171809353757981, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -51,9 +55,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2634883637282335686, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3533281501125979974, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
       propertyPath: m_Name
       value: ZombieUpgrade1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6107262354514293613, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7165906925166905549, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90c74f37515291c43bb01d5b552aa32b, type: 3}

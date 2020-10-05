@@ -55,5 +55,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireSkeleton
       objectReference: {fileID: 0}
+    - target: {fileID: 6417242570657164475, guid: cc8df1ea45fa61e40bca0a921dcf6c4c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8df1ea45fa61e40bca0a921dcf6c4c, type: 3}

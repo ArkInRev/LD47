@@ -8,7 +8,7 @@ public class ThirdPersonController : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 50;
     [SerializeField]
-    private float sensitivity;
+    private float sensitivity=1f;
     [SerializeField]
     private Transform player;
     [SerializeField]

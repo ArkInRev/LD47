@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         playerC = player.GetComponent<PlayerController>();
         totalSO = 0;
         ResetShopUpgrades();
+        PlayerHealthChange();
     }
 
     // Update is called once per frame

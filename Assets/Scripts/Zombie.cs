@@ -135,15 +135,23 @@ public class Zombie : MonoBehaviour, IDamageable
         {
             if (lootDropped <= minDrops) // ensure minimum drops
             {
-                Instantiate(drop, transform.position, Quaternion.identity);
+
+                /// POST SUBMISSION FIX
+                /// Changed the drop from zombies to raise the height of the loot instance. 
+                /// When trying to get started, zombies were dropping loot through the world 
+                /// in the WebGL build. This small change allows the progression to begin.
+
+                Instantiate(drop, new Vector3(transform.position.x, 1, transform.position.z), Quaternion.identity);
+                Debug.Log("Dropping from Min Drops Zombie");
             }
             else //else randomize for each other drop
             {
+                Debug.Log("Trying to Drop from Drop Chance Zombie");
                 float lootRoll = Random.Range(0f, 1f);
                 if (lootRoll <= eDropChance)
                 {
-
-                    Instantiate(drop, transform.position, Quaternion.identity);
+                    Debug.Log("Dropping from Drop Chance Zombie");
+                    Instantiate(drop, new Vector3(transform.position.x, 1, transform.position.z) , Quaternion.identity);
                 }
             }
             lootDropped++;
